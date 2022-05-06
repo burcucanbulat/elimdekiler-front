@@ -1,0 +1,23 @@
+.tags-input {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	min-height: 48px;
+	width: 480px;
+	padding: 0 8px;
+	border: 1px solid black;
+	border-radius: 6px;
+	&:focus-within {
+		border: 1px solid #0052cc;
+	}
+	input {
+		flex: 1;
+		border: none;
+		height: 46px;
+		font-size: 14px;
+		padding: 4px 0 0 0;
+		&:focus {
+			outline: transparent;
+		}
+    }
+}
