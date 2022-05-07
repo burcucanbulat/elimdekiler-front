@@ -5,6 +5,7 @@ import Recipes from "./Pages/Recipes";
 import Food from "./Pages/Food";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Ingredients from "./Pages/Ingredients";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/Food">
           <Food />
+        </Route>
+        <Route path="/Ingredients/:id">
+          <Ingredients />
         </Route>
       </Switch>
     </Router>
