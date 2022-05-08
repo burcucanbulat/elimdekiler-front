@@ -28,7 +28,7 @@ function App() {
               <button
                 className="btn btn-success"
                 onClick={() => {
-                  history.push("/food");
+                  history.push("/PersonalCare");
                 }}
               >
                 Görüntüle

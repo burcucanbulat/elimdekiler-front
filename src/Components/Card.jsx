@@ -4,7 +4,8 @@ import TopBar from "../Components/TopBar/TopBar";
 import LeftArrow from "../assets/left-arrow.svg";
 import RightArrow from "../assets/right-arrow.svg";
 import "../Components/card.scss";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Card({ title, data }) {
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
@@ -25,7 +26,8 @@ export default function Card({ title, data }) {
     nextArrow: <SlickArrowRight />,
   };
   let history = useHistory();
-
+  let location = useLocation();
+  console.log(location.pathname);
   return (
     <div className="card__container">
       <h1>{title}</h1>
@@ -39,7 +41,12 @@ export default function Card({ title, data }) {
               <button
                 className="btn btn-success"
                 onClick={() => {
+                if(location.pathname == "/Recipes"){
                   history.push(`/Ingredients/${item.id}`);
+                }else{
+                  history.push(`/PersonalCareIngredients/${item.id}`);
+                }
+                 
                 }}
               >
                 Görüntüle

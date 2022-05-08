@@ -5,15 +5,15 @@ import { useParams } from "react-router-dom";
 import RecipeReviewCard from "../Components/RecipeReviewCard";
 import Grid from '@mui/material/Grid';
 
-function Ingredients() {
-  const [foodIngredient, setFoodIngredient] = useState([]);
+function PersonalCareIngredients() {
+  const [personalCareIngredient, setpersonalCareIngredient] = useState([]);
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:8080/api/food-recipes/${id}`)
+    fetch(`http://localhost:8080/api/personal-care-recipes/${id}`)
       .then((res) => res.json())
       .then((result) => {
-        setFoodIngredient(result);
+        setpersonalCareIngredient(result);
       });
   }, []);
 
@@ -28,10 +28,10 @@ function Ingredients() {
 
 >
       <RecipeReviewCard
-        image={foodIngredient.image}
-        name={foodIngredient.name}
-        description={foodIngredient.description}
-        ingredients={foodIngredient.ingredients}
+        image={personalCareIngredient.image}
+        name={personalCareIngredient.name}
+        description={personalCareIngredient.description}
+        ingredients={personalCareIngredient.ingredients}
       />
       </Grid>
 
@@ -39,4 +39,4 @@ function Ingredients() {
 
   );
 }
-export default Ingredients;
+export default PersonalCareIngredients;

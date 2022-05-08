@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const FOOD_RECIPES_REST_API_URL = 'http://localhost:8080/api/food-recipes';
+const FOOD_RECIPES_REST_API_URL = 'http://localhost:8080/api/food-recipes/rand';
 
 class FoodRecipeService {
 
