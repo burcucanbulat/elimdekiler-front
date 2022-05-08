@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import "./topbar.scss";
-import {useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function TopBar() {
   let location = useLocation();
   return (
     <div classNameName="topbar">
-      <nav className="navbar navbar-expand-lg navbar-dark ">
+      <nav className="navbar navbar-expand-lg navbar-light ">
         <button
           className="navbar-toggler"
           type="button"
@@ -31,16 +31,16 @@ export default function TopBar() {
               </Link>
             </li>
             <li className="nav-item">
-              {location.pathname == "/food" &&
-              <Link className="nav-link" to={"/Recipes"}>
-                Tarifler
-              </Link>
-            }
-             {location.pathname == "/PersonalCare" &&
-              <Link className="nav-link" to={"/PersonalCareRecipes"}>
-                Tarifler
-              </Link>
-            }
+              {location.pathname == "/food" && (
+                <Link className="nav-link" to={"/Recipes"}>
+                  Tarifler
+                </Link>
+              )}
+              {location.pathname == "/PersonalCare" && (
+                <Link className="nav-link" to={"/PersonalCareRecipes"}>
+                  Tarifler
+                </Link>
+              )}
             </li>
           </ul>
         </div>

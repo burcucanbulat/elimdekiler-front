@@ -3,11 +3,12 @@ import Home from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
 import Recipes from "./Pages/Recipes";
 import Food from "./Pages/Food";
-import PersonalCareRecipes from "./Pages/PersonalCareRecipes"
+import PersonalCareRecipes from "./Pages/PersonalCareRecipes";
 import PersonalCareIngredients from "./Pages/PersonalCareIngredients";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Ingredients from "./Pages/Ingredients";
 import PersonalCare from "./Pages/PersonalCare";
+import FoodDetails from "./Pages/FoodDetails";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Recipes />
         </Route>
         <Route path="/PersonalCareRecipes">
-          <PersonalCareRecipes/>
+          <PersonalCareRecipes />
         </Route>
         <Route path="/Food">
           <Food />
@@ -35,7 +36,10 @@ function App() {
           <Ingredients />
         </Route>
         <Route path="/PersonalCareIngredients/:id">
-          <PersonalCareIngredients/>
+          <PersonalCareIngredients />
+        </Route>
+        <Route path="/FoodDetails">
+          <FoodDetails />
         </Route>
       </Switch>
     </Router>

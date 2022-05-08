@@ -86,7 +86,7 @@ export default function TagsInput({ ...props }) {
             placeholder,
           });
           return (
-            <div >
+            <div>
               <TextField
                 InputProps={{
                   startAdornment: selectedItem.map((item) => (

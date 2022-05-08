@@ -1,14 +1,13 @@
-import "./food.scss";
+import "./personalCare.scss";
 import React from "react";
 import TopBar from "../Components/TopBar/TopBar";
 import Search from "../Components/Search/Search";
 
-
 function PersonalCare() {
   return (
-    <div className="food-bg">
+    <div className="care-bg">
       <TopBar />
-          <Search />
+      <Search />
     </div>
   );
 }
