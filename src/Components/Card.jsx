@@ -4,6 +4,8 @@ import TopBar from "../Components/TopBar/TopBar";
 import LeftArrow from "../assets/left-arrow.svg";
 import RightArrow from "../assets/right-arrow.svg";
 import "../Components/card.scss";
+import { useHistory, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Card({ title, data }) {
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
@@ -23,6 +25,9 @@ export default function Card({ title, data }) {
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
   };
+  let history = useHistory();
+  let location = useLocation();
+  console.log(location.pathname);
   return (
     <div className="card__container">
       <h1>{title}</h1>
@@ -30,10 +35,22 @@ export default function Card({ title, data }) {
         {data.map((item, index) => {
           return (
             <div className="card__container--inner--card" key={index}>
-              <img src={item.url} alt="hero_img" />
+              <img src={item.image} alt="hero_img" />
 
-              <h2>Fırında Makarna</h2>
-              <button className="btn btn-success">Görüntüle</button>
+              <h2>{item.name}</h2>
+              <button
+                className="btn btn-success"
+                onClick={() => {
+                if(location.pathname == "/Recipes"){
+                  history.push(`/Ingredients/${item.id}`);
+                }else{
+                  history.push(`/PersonalCareIngredients/${item.id}`);
+                }
+                 
+                }}
+              >
+                Görüntüle
+              </button>
             </div>
           );
         })}

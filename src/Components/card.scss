@@ -72,10 +72,10 @@ $font : 'Josefin Sans', sans-serif;
          }
           
         
-        &:hover{
-          transform: scale(1.05);
-          cursor: pointer;
-        }
+        // &:hover{
+        //   transform: scale(1.05);
+        //   cursor: pointer;
+        // }
       
         &--date_time{
           display: flex;
@@ -112,7 +112,6 @@ $font : 'Josefin Sans', sans-serif;
         top: 40%;
         &:hover{
         background-color:#fff;
-    
         }
     }
     

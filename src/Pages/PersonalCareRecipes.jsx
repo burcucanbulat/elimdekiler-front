@@ -3,23 +3,22 @@ import Card from "../Components/Card";
 import "../sass/pages/_home.scss";
 import TopBar from "../Components/TopBar/TopBar";
 import "../Pages/recipes.scss";
-import "../services/FoodRecipeService";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import FoodRecipeService from "../services/FoodRecipeService";
+import PersonalCareRecipeService from "../services/PersonalCareRecipeService";
 
-export default class App extends Component {
+export default class PersonalCareRecipes extends Component {
   constructor(props){
     super(props)
     this.state = {
-        foodRecipes:[]
+        personalCareRecipes:[]
     }
   }
   
   componentDidMount(){
-    FoodRecipeService.getFoodRecipes().then((response)=>{
-      this.setState({foodRecipes: response.data})
+    PersonalCareRecipeService.getPersonalCareRecipes().then((response)=>{
+      this.setState({personalCareRecipes: response.data})
     });
   }
   render() {
@@ -28,7 +27,7 @@ export default class App extends Component {
         <div className="recipes-bg">
           <TopBar />
 
-          <Card title="Önerilen Yemekler" data={this.state.foodRecipes} />
+          <Card title="Önerilen Kişisel Bakımlar" data={this.state.personalCareRecipes} />
         </div>
       </>
     );
