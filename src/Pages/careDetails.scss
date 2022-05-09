@@ -1,15 +1,18 @@
 $font : 'Josefin Sans', sans-serif;
-.detail {
+.background {
+    background-color: #f2b3b4;
+    height: 100vh;
+
     img {
         border-radius: 20%;
         max-width: 550px;
     }
-    h2 {
-        background-color: rgba(115, 180, 103, 0.514);
+
+    h2{
+        background-color: rgba(225, 225, 225, 0.8);
+        border-radius: 10px;
         text-align: center;
         font-family: $font;
         font-weight: bold;
-        border-radius: 10px;
-        
     }
 }

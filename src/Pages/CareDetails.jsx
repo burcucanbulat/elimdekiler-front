@@ -1,18 +1,18 @@
 import React from "react";
-import "./foodDetails.scss";
 import TopBar from "../Components/TopBar/TopBar";
+import "./careDetails.scss";
 
-function FoodDetails() {
+function CareDetails() {
   return (
-    <div>
-      <TopBar style={{ color: "red" }} />
+    <div className="background">
+      <TopBar />
       <div className="container">
-        <div className="row detail">
-          <div className="col-sm-12 col-md-6 col-lg-6">
-            <img src="img/corba.jpg" alt="" />
+        <div className="row">
+          <div className="col-sm-12 col-md-6 col-lg-6 ">
+            <img src="img/care.jpg" alt="" />
           </div>
           <div className="col-sm-12 col-md-6 col-lg-6">
-            <h2>Sebzeli Çorba</h2>
+            <h2>Kil Maskesi</h2>
             <ul>
               Malzemeler
               <li>aa</li>
@@ -34,4 +34,4 @@ function FoodDetails() {
   );
 }
 
-export default FoodDetails;
+export default CareDetails;

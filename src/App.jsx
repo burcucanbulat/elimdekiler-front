@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Ingredients from "./Pages/Ingredients";
 import PersonalCare from "./Pages/PersonalCare";
 import FoodDetails from "./Pages/FoodDetails";
+import CareDetails from "./Pages/CareDetails";
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route path="/FoodDetails">
           <FoodDetails />
+        </Route>
+        <Route path="/CareDetails">
+          <CareDetails />
         </Route>
       </Switch>
     </Router>
