@@ -1,31 +1,40 @@
 import React from "react";
 import "./foodDetails.scss";
 import TopBar from "../Components/TopBar/TopBar";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 function FoodDetails() {
+  const [foodIngredient, setFoodIngredient] = useState([]);
+  const [splitIngredients, setSplitIngredients] = useState([]);
+  const { id } = useParams();
+  console.log(id);
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/food-recipes/${id}`)
+      .then((res) => res.json())
+      .then((result) => {
+        setFoodIngredient(result);
+        setSplitIngredients(result.ingredients.split(","));
+      });
+  }, []);
   return (
     <div>
       <TopBar style={{ color: "red" }} />
       <div className="container">
         <div className="row detail">
           <div className="col-sm-12 col-md-6 col-lg-6">
-            <img src="img/corba.jpg" alt="" />
+            <img src={foodIngredient.image} alt="" />
           </div>
           <div className="col-sm-12 col-md-6 col-lg-6">
-            <h2>Sebzeli Çorba</h2>
+            <h2>{foodIngredient.name}</h2>
             <ul>
               Malzemeler
-              <li>aa</li>
-              <li>aa</li>
-              <li>aa</li>
+              {splitIngredients.map(element => {
+          return <li>{element}</li>;
+        })}
             </ul>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
-              nihil veniam et iure excepturi id earum libero sequi temporibus
-              dignissimos dicta ab omnis autem dolor, possimus reiciendis beatae
-              perspiciatis accusantium quis, impedit expedita. Officia eligendi
-              culpa corporis fugit, cumque eos soluta saepe vero facilis nostrum
-              minima reiciendis repudiandae error odio!
+             {foodIngredient.description}
             </p>
           </div>
         </div>

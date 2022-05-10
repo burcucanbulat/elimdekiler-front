@@ -39,10 +39,10 @@ function App() {
         <Route path="/PersonalCareIngredients/:id">
           <PersonalCareIngredients />
         </Route>
-        <Route path="/FoodDetails">
+        <Route path="/FoodDetails/:id">
           <FoodDetails />
         </Route>
-        <Route path="/CareDetails">
+        <Route path="/CareDetails/:id">
           <CareDetails />
         </Route>
       </Switch>

@@ -5,7 +5,6 @@ import LeftArrow from "../assets/left-arrow.svg";
 import RightArrow from "../assets/right-arrow.svg";
 import "../Components/card.scss";
 import { useHistory, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 export default function Card({ title, data }) {
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
@@ -42,9 +41,9 @@ export default function Card({ title, data }) {
                 className="btn btn-success"
                 onClick={() => {
                 if(location.pathname == "/Recipes"){
-                  history.push(`/Ingredients/${item.id}`);
+                  history.push(`/FoodDetails/${item.id}`);
                 }else{
-                  history.push(`/PersonalCareIngredients/${item.id}`);
+                  history.push(`/CareDetails/${item.id}`);
                 }
                  
                 }}
